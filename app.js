@@ -24,7 +24,7 @@ mongoose.connect(dbURI, {
 mongoose.Promise = global.Promise;
 
 // Use routes
-app.use('/api', taskRoutes);
+app.use('/api/tasks', taskRoutes);
 
 // Start server
 app.listen(port, () => {
