@@ -1,10 +1,16 @@
 const express = require('express');
+const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 
 // Require routes for task api
 const taskRoutes = require('./Routes/api.routes');
 
 const app = express();
+
+// Parse x-www-form-urlencoded
+app.use(bodyParser.urlencoded({extended: false}));
+// Parse json
+app.use(bodyParser.json());
 // Define port
 const port = 3000;
 
@@ -28,5 +34,5 @@ app.use('/api/tasks', taskRoutes);
 
 // Start server
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`App listening at http://localhost:${port}`)
 });
