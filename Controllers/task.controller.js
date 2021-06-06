@@ -2,22 +2,29 @@ const Task = require('../Models/task')
 const mongoose = require('mongoose')
 
 // Get all tasks
-const getAllTasks = (req, res) => {
+const index = (req, res) => {
     // Find all tasks
     Task.find().then(
-        (tasks) => res.status(200).json(tasks)
+        (tasks) => res.json(tasks),
     );
 };
 
-// Create test task
-const createTestTask = (req, res) => {
+// Store new task
+const store = (req, res) => {
+    const body = req.body.body;
+    const completed = req.body.completed || false;
     // New task from Task model
-    const task = new Task({_id: mongoose.Types.ObjectId(), body: 'test one', completed: false});
+    const task = new Task({
+        _id: mongoose.Types.ObjectId(),
+        body,
+        completed,
+    });
     // Save new task
     task.save((err, task) => {
+        // If error - send error
         if (err) res.status(500).send('Internal server error');
-        res.status(200).send(`Created new test task with id: ${task.id}`);
+        res.json(task);
     })
-}
+};
 
-module.exports = {getAllTasks, createTestTask};
+module.exports = {index, store};
