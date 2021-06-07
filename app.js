@@ -30,7 +30,7 @@ mongoose.connect(dbURI, {
 mongoose.Promise = global.Promise;
 
 // Use routes
-app.use('/api/tasks', taskRoutes);
+app.use('/tasks', taskRoutes);
 
 // Start server
 app.listen(port, () => {
