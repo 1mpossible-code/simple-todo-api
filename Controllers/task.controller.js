@@ -41,6 +41,19 @@ const store = async (req, res) => {
 };
 
 /**
+ * Update task with specified _id
+ * with changes from request
+ * @param req
+ * @param res
+ * @returns {Promise<*>}
+ */
+const update = async (req, res) => {
+    const id = req.params.id;
+    const updates = req.body;
+    return res.json(await taskService.updateOne(id, updates));
+}
+
+/**
  * Destroy task with specified :id
  * @param req
  * @param res
@@ -53,4 +66,4 @@ const destroy = async (req, res) => {
     return res.json(await taskService.deleteOne(id));
 }
 
-module.exports = {index, show, store, destroy};
+module.exports = {index, show, store, update, destroy};

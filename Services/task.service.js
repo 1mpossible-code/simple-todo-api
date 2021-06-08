@@ -38,6 +38,17 @@ class TaskService {
     }
 
     /**
+     * Update one task with specified updates
+     * @param _id
+     * @param updates {Object}
+     * @returns {Promise<UpdateWriteOpResult>}
+     */
+    static async updateOne(_id, updates) {
+        // Update task with _id from updates
+        return await Task.updateOne({_id}, updates).exec();
+    }
+
+    /**
      * Delete one task with the given id
      * @param _id
      * @returns {Promise<{ok?: number, n?: number} & {deletedCount?: number}>}

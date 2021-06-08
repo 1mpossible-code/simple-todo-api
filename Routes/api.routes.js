@@ -9,7 +9,8 @@ router.get('/', taskController.index);
 router.get('/:id', taskController.show);
 // Store new task with POST request
 // Task MUST have 'body' and OPTIONAL 'completed'
-router.post('/store', taskController.store);
+router.post('/', taskController.store);
+router.patch('/:id', taskController.update)
 // Destroy task with specified :id
 router.delete('/:id', taskController.destroy);
 
