@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
+const morgan = require('morgan')
 
 // Require routes for task api
 const taskRoutes = require('./Routes/api.routes');
@@ -11,6 +12,9 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 // Parse json
 app.use(bodyParser.json());
+
+// Logger
+app.use(morgan("tiny"));
 
 // Define db uri
 const dbURI = 'mongodb://root:example@mongo/simple-todo?authSource=admin';
