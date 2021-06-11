@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm install && node node_modules/nodemon/bin/nodemon.js app.js"
+    "start": "npm install && node node_modules/nodemon/bin/nodemon.js bin/www"
   },
   "keywords": [],
   "author": "",

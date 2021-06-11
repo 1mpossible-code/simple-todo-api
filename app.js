@@ -11,8 +11,6 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 // Parse json
 app.use(bodyParser.json());
-// Define port
-const port = 3000;
 
 // Define db uri
 const dbURI = 'mongodb://root:example@mongo/simple-todo?authSource=admin';
@@ -32,7 +30,5 @@ mongoose.Promise = global.Promise;
 // Use routes
 app.use('/tasks', taskRoutes);
 
-// Start server
-app.listen(port, () => {
-    console.log(`App listening at http://localhost:${port}`)
-});
+// Export app module
+module.exports = app;

@@ -1,0 +1,10 @@
+// Require app module
+app = require('../app')
+
+// Define port
+const port = 3000;
+
+// Start server
+app.listen(port, () => {
+    console.log(`App listening at http://localhost:${port}`)
+});
