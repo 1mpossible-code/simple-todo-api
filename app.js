@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const cors = require('cors')
 const bodyParser = require('body-parser')
@@ -21,7 +22,7 @@ app.use(bodyParser.json());
 app.use(morgan("tiny"));
 
 // Define db uri
-const dbURI = 'mongodb://root:example@mongo/simple-todo?authSource=admin';
+const dbURI = process.env.DB_URI;
 
 // Connect to DB
 mongoose.connect(dbURI, {
