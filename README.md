@@ -59,7 +59,7 @@ npm install
 npm run serve
 ```
 
-> You will have api on http://localhost:3000/tasks/
+> You will have api on http://localhost:3000/api/
 > And front on http://localhost:8080/
 
 ## Usage
@@ -70,11 +70,11 @@ This API supports:
 
 |Method|Route|Params|Result|Description|
 |:----:|-----|:----:|------|-----------|
-GET | /tasks | {} | List of all the [tasks](#task-json-example) in JSON | Get all the tasks
-GET | /tasks/{id} | {} | [Task](#task-json-example) with specified {id} in JSON | Get the task with specified {id}
-POST | /tasks | {body: String, completed: Boolean} | New created task in JSON| Store new task with parameters. 'body' is required and 'completed' is optional
-PATCH | /tasks/{id} | {body: String, completed: Boolean} | JSON data {"n":1,"nModified":1,"ok":1} | Update task with specified {id} with the data from params. Both 'body' and 'completed' are optional
-DELETE | /tasks/{id} | {} | JSON data {"n":1,"ok":1,"deletedCount":1} | Destroy task with specified :id
+GET | /api | {} | List of all the [tasks](#task-json-example) in JSON | Get all the tasks
+GET | /api/{id} | {} | [Task](#task-json-example) with specified {id} in JSON | Get the task with specified {id}
+POST | /api | {body: String, completed: Boolean} | New created task in JSON| Store new task with parameters. 'body' is required and 'completed' is optional
+PATCH | /api/{id} | {body: String, completed: Boolean} | JSON data {"n":1,"nModified":1,"ok":1} | Update task with specified {id} with the data from params. Both 'body' and 'completed' are optional
+DELETE | /api/{id} | {} | JSON data {"n":1,"ok":1,"deletedCount":1} | Destroy task with specified :id
 
 #### Task JSON example
 
