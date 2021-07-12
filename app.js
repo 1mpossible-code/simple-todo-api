@@ -37,7 +37,7 @@ mongoose.connect(dbURI, {
 mongoose.Promise = global.Promise;
 
 // Use routes
-app.use('/tasks', taskRoutes);
+app.use('/api', taskRoutes);
 
 // Export app module
 module.exports = app;
