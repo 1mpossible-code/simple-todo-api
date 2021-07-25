@@ -43,8 +43,7 @@ git clone https://github.com/1mpossible-code/simple-todo-front
 After cloning repos do:
 
 ```shell
-# Go to simple-todo-api directory in another
-# terminal or tmux or screen (command) maybe
+# Go to simple-todo-api directory
 cd simple-todo-api
 # Run docker-compose.yml file
 docker-compose up -d
